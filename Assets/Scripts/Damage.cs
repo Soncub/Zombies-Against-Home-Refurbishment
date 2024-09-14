@@ -20,10 +20,22 @@ public class Damage : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (invincible <= 0)
+        if (gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Health>().TakeDamage(2);
-            invincible = nextHit;
+            if (invincible <= 0)
+            {
+                collision.gameObject.GetComponent<Health>().TakeDamage(1);
+                invincible = nextHit;
+            }
+        }
+
+        if (gameObject.tag == "Player")
+        {
+            if (invincible <= 0)
+            {
+                collision.gameObject.GetComponent<Health>().Fix(2);
+                invincible = nextHit;
+            }
         }
     }
 }
