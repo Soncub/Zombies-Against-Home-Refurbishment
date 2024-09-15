@@ -1,16 +1,19 @@
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.InputSystem.EnhancedTouch;
 using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class PlayerTouchMovement : MonoBehaviour
 {
     [SerializeField]
-    private Vector2 JoystickSize = new Vector2(300, 300);
+    public Vector2 JoystickSize = new Vector2(120, 120);
     [SerializeField]
     private FloatingJoystick Joystick;
     [SerializeField]
-    private NavMeshAgent Player;
+    private CharacterController PlayerController;
+    [SerializeField]
+    private Transform cameraTransform;
+
+    public float moveSpeed = 5.0f;
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
@@ -103,13 +106,27 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 scaledMovement = Player.speed * Time.deltaTime * new Vector3(
-            MovementAmount.x,
-            0,
-            MovementAmount.y
-        );
+        if (MovementAmount != Vector2.zero)
+        {
+            Vector3 moveDirection = new Vector3(MovementAmount.x, 0, MovementAmount.y);
 
-        Player.transform.LookAt(Player.transform.position + scaledMovement, Vector3.up);
-        Player.Move(scaledMovement);
+            Vector3 forward = cameraTransform.forward;
+            Vector3 right = cameraTransform.right;
+
+            forward.y = 0f;
+            right.y = 0f;
+
+            forward.Normalize();
+            right.Normalize();
+
+            Vector3 desiredMoveDirection = (forward * moveDirection.z + right * moveDirection.x).normalized;
+
+            PlayerController.Move(desiredMoveDirection * moveSpeed * Time.deltaTime);
+
+            if (desiredMoveDirection != Vector3.zero)
+            {
+                transform.forward = desiredMoveDirection;
+            }
+        }
     }
 }

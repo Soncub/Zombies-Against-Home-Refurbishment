@@ -47,5 +47,6 @@ public class Health : MonoBehaviour
     public void Fix(int amount)
     {
         health += amount;
+        health = Mathf.Min(health, maxHealth);
     }
 }
