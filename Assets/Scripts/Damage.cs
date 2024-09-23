@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    private float invincible = 0;
-    private float nextHit = 1;
-    private float coolDown = 0;
-    private float nextFix = 1;
+    public float invincible = 0;
+    public float nextHit = 1;
+
+    public float enemyDamage = 1f;
+    public float damageIncrease = 0.5f;
+    public float timeToIncreaseDamage = 30f;
+    public float damageIncreaseTimer = 0f;
 
     void Update()
     {
@@ -16,9 +19,12 @@ public class Damage : MonoBehaviour
             invincible -= Time.deltaTime;
         }
 
-        if (coolDown > 0)
+        damageIncreaseTimer += Time.deltaTime;
+        if (damageIncreaseTimer >= timeToIncreaseDamage)
         {
-            coolDown -= Time.deltaTime;
+            enemyDamage += damageIncrease;
+            damageIncreaseTimer = 0f;
+            Debug.Log("Enemy damage increased. New damage: " + enemyDamage);
         }
     }
 
@@ -36,32 +42,14 @@ public class Damage : MonoBehaviour
                 if (collision.gameObject.tag == "Wall")
                 {
                     Debug.Log("Enemy damages the wall.");
-                    collidedHealth.TakeDamage(1);
+                    collidedHealth.TakeDamage(Mathf.FloorToInt(enemyDamage));
                 }
                 else if (collision.gameObject.tag == "Player")
                 {
                     Debug.Log("Enemy damages the player.");
-                    collidedHealth.TakeDamage(1);
+                    collidedHealth.TakeDamage(Mathf.FloorToInt(enemyDamage));
                 }
                 invincible = nextHit;
-            }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Health collidedHealth = other.gameObject.GetComponent<Health>();
-
-        if (collidedHealth == null)
-            return;
-
-        if (gameObject.tag == "Player" && other.gameObject.tag == "Wall")
-        {
-            if (coolDown <= 0)
-            {
-                Debug.Log("Player heals the wall.");
-                collidedHealth.Fix(2);
-                coolDown = nextFix;
             }
         }
     }
