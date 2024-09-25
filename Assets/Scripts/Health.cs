@@ -59,5 +59,10 @@ public class Health : MonoBehaviour
         health += amount;
         healthText.text = "Health: " + health;
         health = Mathf.Min(health, maxHealth);
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+            healthText.text = "Health: " + health;
+        }
     }
 }

@@ -244,7 +244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   maxHealth: 10
-  healthText: {fileID: 841880732}
 --- !u!54 &40333948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -946,8 +945,8 @@ MonoBehaviour:
   invincible: 0
   nextHit: 1
   enemyDamage: 1
-  damageIncrease: 0.5
-  timeToIncreaseDamage: 30
+  damageIncrease: 1
+  timeToIncreaseDamage: 10
   damageIncreaseTimer: 0
 --- !u!195 &586860846
 NavMeshAgent:
@@ -1151,7 +1150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 462, y: -260}
+  m_AnchoredPosition: {x: 139, y: -56.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841880732
@@ -1586,7 +1585,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
-  healthText: {fileID: 1722456020}
 --- !u!143 &965930652
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2058,7 +2056,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2090,7 +2088,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.033333335
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 66fba065bfacb9e45b5d70d0b8dad9f2, type: 2}
   m_BuildHeightMesh: 0
@@ -2172,11 +2170,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 944148348}
   - {fileID: 211241391}
-  - {fileID: 1774807905}
   - {fileID: 2003148325}
   - {fileID: 367571974}
   - {fileID: 586860844}
-  - {fileID: 40333946}
-  - {fileID: 1529561885}
   - {fileID: 965930642}
   - {fileID: 677932798}
+  - {fileID: 1774807905}
+  - {fileID: 40333946}
+  - {fileID: 1529561885}

@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MechanicsPrototype.unity
     guid: 32d358c078b92ff4483ff56db340bd9a
+  - enabled: 1
+    path: Assets/Scenes/ZAHRLevelBlockout.unity
+    guid: 206be63c4cf38a0478569c4b05234a18
   m_configObjects: {}

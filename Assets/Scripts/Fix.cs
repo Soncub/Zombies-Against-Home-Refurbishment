@@ -7,8 +7,8 @@ public class Fix : MonoBehaviour
     private float coolDown = 0;
     private float nextFix = 1;
 
-    public int points = 0;
-    public int maxPoints = 10;
+    //public int points = 0;
+    //public int maxPoints = 10;
 
     void Update()
     {
@@ -27,21 +27,22 @@ public class Fix : MonoBehaviour
 
         if (gameObject.tag == "Player" && other.gameObject.tag == "Wall")
         {
-            if (coolDown <= 0 && points > 0)
+            if (coolDown <= 0 /*&& points > 0*/)
             {
                 Debug.Log("Player heals the wall.");
                 collidedHealth.Fix(5);
-                points--;
+                //points--;
                 coolDown = nextFix;
             }
-            else if (points <= 0)
+            /*else if (points <= 0)
             {
                 Debug.Log("Not enough points to heal the wall.");
             }
+            */
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PointCollect" && points < maxPoints)
         {
@@ -66,4 +67,5 @@ public class Fix : MonoBehaviour
             Debug.Log("Collected 1 point. Current points: " + points);
         }
     }
+    */
 }
