@@ -115,6 +115,7 @@ public class PlayerTouchMovement : MonoBehaviour
     {
         if (MovementAmount != Vector2.zero)
         {
+            animator.SetBool("Run", true);
             Vector3 moveDirection = new Vector3(MovementAmount.x, 0, MovementAmount.y);
 
             Vector3 forward = cameraTransform.forward;
@@ -134,6 +135,10 @@ public class PlayerTouchMovement : MonoBehaviour
             {
                 transform.forward = desiredMoveDirection;
             }
+        }
+        else
+        {
+            animator.SetBool("Run", false);
         }
     }
 }
