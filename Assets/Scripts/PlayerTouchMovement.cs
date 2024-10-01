@@ -12,11 +12,18 @@ public class PlayerTouchMovement : MonoBehaviour
     private CharacterController PlayerController;
     [SerializeField]
     private Transform cameraTransform;
+    [SerializeField]
+    private Animator animator;
 
     public float moveSpeed = 5.0f;
 
     private Finger MovementFinger;
     private Vector2 MovementAmount;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {

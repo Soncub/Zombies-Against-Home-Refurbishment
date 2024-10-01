@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.Find("Prototype Player").transform;
+        player = GameObject.Find("PlayerCharacter").transform;
         agent = GetComponent<NavMeshAgent>();
     }
     void Start()
