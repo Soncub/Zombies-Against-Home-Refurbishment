@@ -11,6 +11,8 @@ public class Damage : MonoBehaviour
     public float damageIncrease = 0.5f;
     public float timeToIncreaseDamage = 30f;
     public float damageIncreaseTimer = 0f;
+    [SerializeField]
+    private Animator animator;
 
     void Update()
     {
@@ -41,8 +43,10 @@ public class Damage : MonoBehaviour
             {
                 if (collision.gameObject.tag == "Wall")
                 {
+                    //animator.SetBool("Attack", true);
                     Debug.Log("Enemy damages the wall.");
                     collidedHealth.TakeDamage(Mathf.FloorToInt(enemyDamage));
+                    animator.SetBool("Attack", false);
                 }
                 else if (collision.gameObject.tag == "Player")
                 {
