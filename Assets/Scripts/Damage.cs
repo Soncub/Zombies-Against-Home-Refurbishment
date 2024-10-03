@@ -43,10 +43,9 @@ public class Damage : MonoBehaviour
             {
                 if (collision.gameObject.tag == "Wall")
                 {
-                    //animator.SetBool("Attack", true);
+                    animator.SetTrigger("Attack");
                     Debug.Log("Enemy damages the wall.");
                     collidedHealth.TakeDamage(Mathf.FloorToInt(enemyDamage));
-                    animator.SetBool("Attack", false);
                 }
                 else if (collision.gameObject.tag == "Player")
                 {
