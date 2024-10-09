@@ -13,6 +13,8 @@ public class Damage : MonoBehaviour
     public float damageIncreaseTimer = 0f;
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private AudioSource sound;
 
     void Update()
     {
@@ -43,6 +45,7 @@ public class Damage : MonoBehaviour
             {
                 if (collision.gameObject.tag == "Wall")
                 {
+                    sound.Play();
                     animator.SetTrigger("Attack");
                     Debug.Log("Enemy damages the wall.");
                     collidedHealth.TakeDamage(Mathf.FloorToInt(enemyDamage));
