@@ -16,7 +16,9 @@ public class PlayerTouchMovement : MonoBehaviour
     private Animator animator;
 
     public float moveSpeed = 5.0f;
+    public float gravity = -9.81f;
 
+    private float verticalVelocity = 0f;
     private Finger MovementFinger;
     private Vector2 MovementAmount;
 
@@ -113,10 +115,12 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void Update()
     {
+        Vector3 moveDirection = Vector3.zero;
+
         if (MovementAmount != Vector2.zero)
         {
             animator.SetBool("Run", true);
-            Vector3 moveDirection = new Vector3(MovementAmount.x, 0, MovementAmount.y);
+            moveDirection = new Vector3(MovementAmount.x, 0, MovementAmount.y);
 
             Vector3 forward = cameraTransform.forward;
             Vector3 right = cameraTransform.right;
@@ -140,5 +144,17 @@ public class PlayerTouchMovement : MonoBehaviour
         {
             animator.SetBool("Run", false);
         }
+
+        if (PlayerController.isGrounded)
+        {
+            verticalVelocity = 0f;
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        moveDirection.y = verticalVelocity;
+        PlayerController.Move(moveDirection * Time.deltaTime);
     }
 }
