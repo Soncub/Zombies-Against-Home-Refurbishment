@@ -832,7 +832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &79310970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6028,6 +6028,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 1037706394}
   animator: {fileID: 584135332}
   moveSpeed: 7
+  gravity: -9.81
 --- !u!143 &584135331
 CharacterController:
   m_ObjectHideFlags: 0
@@ -6946,7 +6947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &650465727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15023,6 +15024,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 1037706394}
   animator: {fileID: 0}
   moveSpeed: 7
+  gravity: -9.81
 --- !u!65 &1379871505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19542,7 +19544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1811323137
 BoxCollider:
   m_ObjectHideFlags: 0
