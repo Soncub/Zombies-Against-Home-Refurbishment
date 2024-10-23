@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fix : MonoBehaviour
 {
@@ -9,6 +11,13 @@ public class Fix : MonoBehaviour
 
     public int points = 0;
     public int maxPoints = 10;
+
+    public TextMeshProUGUI pointsText;
+
+    void Start()
+    {
+        UpdatePointsUI();
+    }
 
     void Update()
     {
@@ -32,6 +41,7 @@ public class Fix : MonoBehaviour
                 Debug.Log("Player heals the wall.");
                 collidedHealth.Fix(5);
                 points--;
+                UpdatePointsUI();
                 coolDown = nextFix;
             }
             else if (points <= 0)
@@ -63,7 +73,16 @@ public class Fix : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             points++;
+            UpdatePointsUI();
             Debug.Log("Collected 1 point. Current points: " + points);
+        }
+    }
+
+    private void UpdatePointsUI()
+    {
+        if (pointsText != null)
+        {
+            pointsText.text = points.ToString();
         }
     }
 }
