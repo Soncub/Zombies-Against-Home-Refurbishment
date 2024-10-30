@@ -10,7 +10,7 @@ public class LightningController : MonoBehaviour
     public GameObject audioOne;
 
 
-    private void start()
+    public void start()
     {
         lightningOne.SetActive(false);
         lightningTwo.SetActive(false);
@@ -18,7 +18,8 @@ public class LightningController : MonoBehaviour
 
         audioOne.SetActive(false);
 
-        Invoke("CallLightning", 2f);
+        Invoke("CallLightning", 6.1f);
+
     }
 
     void CallLightning()
@@ -52,7 +53,7 @@ public class LightningController : MonoBehaviour
         lightningTwo.SetActive(false);
         lightningThree.SetActive(false);
 
-        float rand = Random.Range(10.5f, 14.7f);
+        float rand = Random.Range(5.1f, 7.7f);
         Invoke("CallLightning", rand);
  
     }
@@ -60,7 +61,7 @@ public class LightningController : MonoBehaviour
     void CallThunder()
     {
         audioOne.SetActive(true);
-        Invoke("EndThunder", 10.2f);
+        Invoke("EndThunder", 5f);
     }
 
     void EndThunder()
