@@ -13011,7 +13011,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103569624}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: ce25ce053ef89b84cbccb5e2f0aa65ae, type: 3}
 --- !u!4 &1103569628
 Transform:
   m_ObjectHideFlags: 0
@@ -26633,6 +26633,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2362502843815020093, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: ce25ce053ef89b84cbccb5e2f0aa65ae,
+        type: 3}
+    - target: {fileID: 2590023819107234882, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e838a443dadcb241a4642b1946d729e, type: 2}
+    - target: {fileID: 3029771155175233661, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e838a443dadcb241a4642b1946d729e, type: 2}
     - target: {fileID: 4527499013442746015, guid: 9a063d2b2c570224ea19058627b02d5a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -26718,11 +26734,28 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 5448665959412100903, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e838a443dadcb241a4642b1946d729e, type: 2}
+    - target: {fileID: 5586753915947032296, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: ce25ce053ef89b84cbccb5e2f0aa65ae,
+        type: 3}
     - target: {fileID: 5895260691736556470, guid: 9a063d2b2c570224ea19058627b02d5a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7140256020139799054, guid: 9a063d2b2c570224ea19058627b02d5a,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: ce25ce053ef89b84cbccb5e2f0aa65ae,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
