@@ -80,7 +80,7 @@ public class Health : MonoBehaviour
         }
         if (gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
 
