@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public TextMeshProUGUI healthText;
     public Animator animator;
     private bool isDead = false;
+    public UIController UIController;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +81,7 @@ public class Health : MonoBehaviour
         }
         if (gameObject.tag == "Player")
         {
+            UIController.StopTimer();
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }

@@ -21,10 +21,11 @@ public class PlayerTouchMovement : MonoBehaviour
     private float verticalVelocity = 0f;
     private Finger MovementFinger;
     private Vector2 MovementAmount;
-
+    public UIController uIController;
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        uIController.StartTimer();
     }
 
     private void OnEnable()
