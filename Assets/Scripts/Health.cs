@@ -30,6 +30,16 @@ public class Health : MonoBehaviour
         {
             healthText.text = "Health: " + health;
         }
+
+        // Try to set the health inside the health field of the animator
+        try
+        {
+            animator.SetInteger("Health", health);
+        }
+        catch
+        {
+
+        }
     }
 
     // Update is called once per frame
@@ -55,6 +65,17 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+
+        // Try to set the health inside the health field of the animator
+        try
+        {
+            animator.SetInteger("Health", health);
+        }
+        catch
+        {
+
+        }
+        Debug.Log($"Health Changed: {health} / {maxHealth}");
     }
 
     void Die()

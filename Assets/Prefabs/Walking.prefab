@@ -527,7 +527,7 @@ MonoBehaviour:
   nextHit: 1
   enemyDamage: 1
   damageIncrease: 1
-  timeToIncreaseDamage: 10
+  timeToIncreaseDamage: 30
   damageIncreaseTimer: 0
   animator: {fileID: 3468368426735634517}
   sound: {fileID: 8961027651947715473}
