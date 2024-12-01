@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincible: 0
-  nextHit: 1
+  nextHit: 2
   enemyDamage: 1
   damageIncrease: 1
   timeToIncreaseDamage: 30
