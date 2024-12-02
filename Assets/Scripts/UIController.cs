@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
         }
         else
         {
-            highscore.text = "No High Scores Yet";
+            highscore.text = "0";
         }
     }
 
